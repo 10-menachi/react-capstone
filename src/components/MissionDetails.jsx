@@ -1,10 +1,12 @@
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from '../styles/Mission.module.css';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
+import styles from '../styles/Mission.module.css';
 
-const MissionDetails = ({ name, description, id, reserved }) => {
+const MissionDetails = ({
+  name, description, id, reserved,
+}) => {
   const dispatch = useDispatch();
   const [text, setText] = useState(reserved ? 'Active Member' : 'Not a Member');
 
