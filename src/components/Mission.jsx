@@ -7,10 +7,10 @@ const Mission = ({ mission }) => (
     <td className={styles.name}>{mission.name}</td>
     <td className={styles.description}>{mission.description}</td>
     <td>
-      <button type="button">Not a member</button>
+      <button type="button" className="mission-button">Not a member</button>
     </td>
     <td>
-      <button type="button">Join mission</button>
+      <button type="button" className="mission-button">Join mission</button>
     </td>
   </tr>
 );
