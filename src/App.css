@@ -93,3 +93,21 @@ td {
   width: 20%;
   cursor: pointer;
 }
+
+.cancel {
+  background-color: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.cancel:hover {
+  background-color: transparent;
+  color: #007bff;
+}
+
+.badge {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.3rem;
+  border-radius: 10px;
+}
