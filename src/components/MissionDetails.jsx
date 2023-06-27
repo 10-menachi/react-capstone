@@ -27,26 +27,24 @@ const MissionDetails = ({
   };
 
   return (
-    <tbody>
-      <tr>
-        <td className={styles.name}>{name}</td>
-        <td className={styles.description}>{description}</td>
-        <td>
-          <span>{text}</span>
-        </td>
-        <td>
-          {!reserved ? (
-            <button type="button" onClick={handleJoin}>
-              Join Mission
-            </button>
-          ) : (
-            <button type="button" onClick={handleLeave}>
-              Leave Mission
-            </button>
-          )}
-        </td>
-      </tr>
-    </tbody>
+    <tr>
+      <td className={styles.name}>{name}</td>
+      <td className={styles.description}>{description}</td>
+      <td>
+        <span>{text}</span>
+      </td>
+      <td>
+        {!reserved ? (
+          <button type="button" onClick={handleJoin}>
+            Join Mission
+          </button>
+        ) : (
+          <button type="button" onClick={handleLeave}>
+            Leave Mission
+          </button>
+        )}
+      </td>
+    </tr>
   );
 };
 
