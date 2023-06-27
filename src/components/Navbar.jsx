@@ -2,12 +2,12 @@ import { NavLink } from 'react-router-dom';
 import img from '../Images/space-img.png';
 
 const Navbar = () => (
-  <div>
-    <div className="head">
-      <img src={img} alt="Space-logo" />
+  <nav className="flex">
+    <div className="logo flex">
+      <img src={img} alt="Space Logo" />
       <h1>Space Travelers&apos; Hub</h1>
     </div>
-    <ul>
+    <ul className="flex">
       <li>
         <NavLink to="/">Rockets</NavLink>
       </li>
@@ -18,7 +18,7 @@ const Navbar = () => (
         <NavLink to="myprofile">My profile</NavLink>
       </li>
     </ul>
-  </div>
+  </nav>
 );
 
 export default Navbar;
