@@ -35,11 +35,11 @@ const MissionDetails = ({
       </td>
       <td>
         {!reserved ? (
-          <button type="button" onClick={handleJoin}>
+          <button type="button" className="mission-button" onClick={handleJoin}>
             Join Mission
           </button>
         ) : (
-          <button type="button" onClick={handleLeave}>
+          <button type="button" className="mission-button" onClick={handleLeave}>
             Leave Mission
           </button>
         )}

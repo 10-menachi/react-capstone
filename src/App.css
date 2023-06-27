@@ -59,3 +59,37 @@ td {
   padding: 1rem;
   overflow-wrap: normal;
 }
+
+.rocket img {
+  width: 10rem;
+  object-fit: contain;
+}
+
+.rockets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 3rem;
+}
+
+.rocket {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 2rem;
+}
+
+.rocket .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.reserve-button {
+  width: 20%;
+  cursor: pointer;
+}
