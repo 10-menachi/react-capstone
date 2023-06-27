@@ -47,3 +47,15 @@ nav ul li a:active {
 .logo {
   gap: 1rem;
 }
+
+table,
+.profile {
+  margin-top: 2rem;
+}
+
+tr,
+td {
+  max-width: 50vw;
+  padding: 1rem;
+  overflow-wrap: normal;
+}
