@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import MissionDetails from './MissionDetails';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissions } from '../redux/missions/missionsSlice';
+import MissionDetails from './MissionDetails';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -26,16 +26,6 @@ const Missions = () => {
       </tbody>
     </table>
   );
-};
-
-Missions.propTypes = {
-  missions: PropTypes.arrayOf(
-    PropTypes.shape({
-      mission_id: PropTypes.string.isRequired,
-      mission_name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    })
-  ),
 };
 
 export default Missions;
