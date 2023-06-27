@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import img from '../images/space-img.png';
+import img from '../Images/space-img.png';
 
 const Navbar = () => {
   return (
