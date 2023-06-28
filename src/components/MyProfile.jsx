@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import missionStyles from '../styles/Mission.module.css';
-import profileStyles from '../styles/MyProfile.module.css';
+import profileStyles from '../styles/myProfile.module.css';
 
 const MyProfile = ({ rockets }) => {
   const { missions } = useSelector((store) => store.missions);
@@ -32,9 +32,7 @@ const MyProfile = ({ rockets }) => {
           bookedRockets.map((rocket, index) => (
             <div
               key={rocket.rocket_id}
-              className={`${profileStyles.rocketProf} ${
-                index === 0 ? profileStyles.top : ''
-              }`}
+              className={`${profileStyles.rocketProf} ${index === 0 ? profileStyles.top : ''}`}
             >
               <p>{rocket.rocket_name}</p>
             </div>
