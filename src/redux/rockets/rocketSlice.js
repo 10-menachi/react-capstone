@@ -6,7 +6,11 @@ export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async () =>
   try {
     const response = await fetch(baseUrl);
     const rockets = await response.json();
-    return rockets;
+    const updatedRockets = rockets.map((rocket) => ({
+      ...rocket,
+      reserved: false,
+    }));
+    return updatedRockets;
   } catch (error) {
     throw Error(error.message);
   }

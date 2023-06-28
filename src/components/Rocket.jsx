@@ -7,9 +7,11 @@ const Rocket = ({
   rocketId, rocketImages, rocketName, rocketDescription, reserved,
 }) => {
   const dispatch = useDispatch();
+
   const handleCancelReserve = () => {
     dispatch(cancelReservation(rocketId));
   };
+
   return (
     <div className="rocket">
       <img src={rocketImages[0]} alt="" />
@@ -48,11 +50,7 @@ Rocket.propTypes = {
   rocketImages: PropTypes.arrayOf(PropTypes.string).isRequired,
   rocketName: PropTypes.string.isRequired,
   rocketDescription: PropTypes.string.isRequired,
-  reserved: PropTypes.bool,
-};
-
-Rocket.defaultProps = {
-  reserved: false,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default Rocket;

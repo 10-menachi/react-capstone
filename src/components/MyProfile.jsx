@@ -1,12 +1,12 @@
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import missionStyles from '../styles/Mission.module.css';
 import profileStyles from '../styles/MyProfile.module.css';
 
-const MyProfile = () => {
+const MyProfile = ({ rockets }) => {
   const { missions } = useSelector((store) => store.missions);
   const bookedMission = missions.filter((mission) => mission.reserved);
-  const { rockets } = useSelector((store) => store.rockets);
-  const bookedRockets = rockets.filter((rocket) => rocket.reserved);
+  const bookedRockets = rockets.filter((rocket) => rocket.reserved === true);
 
   return (
     <>
@@ -26,14 +26,35 @@ const MyProfile = () => {
       </table>
       <div className={profileStyles.container}>
         <h2>My Rockets</h2>
-        <ul>
-          {bookedRockets.map((rocket) => (
-            <li key={rocket.id}>{rocket.name}</li>
-          ))}
-        </ul>
+        {bookedRockets.length === 0 ? (
+          <p className={profileStyles.noReserve}>No reserved rockets</p>
+        ) : (
+          bookedRockets.map((rocket, index) => (
+            <div
+              key={rocket.rocket_id}
+              className={`${profileStyles.rocketProf} ${
+                index === 0 ? profileStyles.top : ''
+              }`}
+            >
+              <p>{rocket.rocket_name}</p>
+            </div>
+          ))
+        )}
       </div>
     </>
   );
+};
+
+MyProfile.propTypes = {
+  rockets: PropTypes.arrayOf(
+    PropTypes.shape({
+      rocket_id: PropTypes.string.isRequired,
+      flickr_images: PropTypes.arrayOf(PropTypes.string).isRequired,
+      rocket_name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      reserved: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
 };
 
 export default MyProfile;
