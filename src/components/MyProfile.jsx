@@ -53,7 +53,7 @@ MyProfile.propTypes = {
       rocket_name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       reserved: PropTypes.bool.isRequired,
-    })
+    }),
   ).isRequired,
 };
 
