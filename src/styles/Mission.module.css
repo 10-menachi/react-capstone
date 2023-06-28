@@ -61,9 +61,10 @@ button:hover {
 
 /* Mission.module.css */
 .missionTable {
-  width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  width: 400px;
+  padding: 5px;
+  margin: 20px;
 }
 
 .missionTable th {
