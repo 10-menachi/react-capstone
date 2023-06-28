@@ -9,7 +9,7 @@ const MyProfile = ({ rockets }) => {
   const bookedRockets = rockets.filter((rocket) => rocket.reserved === true);
 
   return (
-    <>
+    <div className="profile">
       <table className={missionStyles.missionTable}>
         <thead>
           <tr>
@@ -24,22 +24,22 @@ const MyProfile = ({ rockets }) => {
           ))}
         </tbody>
       </table>
-      <div className={profileStyles.container}>
+      <div className="rockets-prof">
         <h2>My Rockets</h2>
         {bookedRockets.length === 0 ? (
           <p className={profileStyles.noReserve}>No reserved rockets</p>
         ) : (
-          bookedRockets.map((rocket, index) => (
+          bookedRockets.map((rocket) => (
             <div
               key={rocket.rocket_id}
-              className={`${profileStyles.rocketProf} ${index === 0 ? profileStyles.top : ''}`}
+              className="rocket-prof"
             >
               <p>{rocket.rocket_name}</p>
             </div>
           ))
         )}
       </div>
-    </>
+    </div>
   );
 };
 
