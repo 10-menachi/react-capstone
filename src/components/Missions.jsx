@@ -1,18 +1,19 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions } from '../redux/missions/missionsSlice';
+import { useSelector } from 'react-redux';
 import MissionDetails from './MissionDetails';
+import Styles from '../styles/Mission.module.css';
 
 const Missions = () => {
-  const dispatch = useDispatch();
   const { missions } = useSelector((store) => store.missions);
 
-  useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
-
   return (
-    <table>
+    <table className={Styles.missionTable}>
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
       <tbody>
         {missions.map((mission) => (
           <MissionDetails

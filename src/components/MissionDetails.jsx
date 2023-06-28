@@ -1,18 +1,17 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from '../styles/Mission.module.css';
+import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
 
-const MissionDetails = ({
-  name, description, id, reserved,
-}) => {
+const MissionDetails = ({ name, description, id, reserved }) => {
   const dispatch = useDispatch();
-  const [text, setText] = useState(reserved ? 'Active Member' : 'Not a Member');
+  const [text, setText] = useState('Not a Member');
 
   const handleJoin = (e) => {
     e.preventDefault();
     dispatch(joinMission(id));
+
     if (!reserved) {
       setText('Active Member');
     }
@@ -21,30 +20,55 @@ const MissionDetails = ({
   const handleLeave = (e) => {
     e.preventDefault();
     dispatch(leaveMission(id));
+
     if (reserved) {
-      setText('Not a Member');
+      setText('Not a member');
     }
   };
 
+  const myStatusStyle = {
+    backgroundColor: reserved ? '#379cf6' : '#36454F',
+    display: 'block',
+    width: '120px',
+    border: '1px solid gray',
+    color: 'white',
+    alignSelf: 'center',
+  };
+
+  const rowStyle = {
+    backgroundColor: reserved ? 'white' : '#E5E4E2',
+  };
+
   return (
-    <tr>
-      <td className={styles.name}>{name}</td>
-      <td className={styles.description}>{description}</td>
-      <td>
-        <span>{text}</span>
-      </td>
-      <td>
-        {!reserved ? (
-          <button type="button" className="mission-button" onClick={handleJoin}>
-            Join Mission
-          </button>
-        ) : (
-          <button type="button" className="mission-button" onClick={handleLeave}>
-            Leave Mission
-          </button>
-        )}
-      </td>
-    </tr>
+    <tbody>
+      <tr style={rowStyle}>
+        <td className={styles.name}>{name}</td>
+        <td className={styles.description}>{description}</td>
+        <td>
+          <span style={myStatusStyle}>{text}</span>
+        </td>
+        <td>
+          {!reserved && (
+            <button
+              type="button"
+              className={styles.joinBtn}
+              onClick={handleJoin}
+            >
+              Join Mission
+            </button>
+          )}
+          {reserved && (
+            <button
+              type="button"
+              className={styles.leaveBtn}
+              onClick={handleLeave}
+            >
+              Leave Mission
+            </button>
+          )}
+        </td>
+      </tr>
+    </tbody>
   );
 };
 
