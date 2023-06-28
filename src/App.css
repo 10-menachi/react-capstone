@@ -35,6 +35,10 @@ nav ul {
   gap: 2rem;
 }
 
+.active {
+  text-decoration: underline;
+}
+
 nav ul li a {
   text-decoration: none;
   color: #000;
@@ -111,4 +115,45 @@ td {
   padding: 0.3rem;
   border-radius: 10px;
   opacity: 0.6;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.rockets-prof {
+  flex: 0.5;
+  margin-top: 0.5rem;
+}
+
+.rocket-prof {
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  padding: 2rem;
+  border-top: 2px solid #000;
+}
+
+.rocket-prof:last-child {
+  border-bottom: 2px solid #000;
+}
+
+.rockets-prof h2 {
+  margin-bottom: 2rem;
+}
+
+.no-reserve {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  background-color: #ff8989;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
 }
