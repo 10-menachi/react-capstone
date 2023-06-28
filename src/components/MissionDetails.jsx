@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import styles from '../styles/Mission.module.css';
 import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
 
-const MissionDetails = ({ name, description, id, reserved }) => {
+const MissionDetails = ({
+  name, description, id, reserved,
+}) => {
   const dispatch = useDispatch();
   const [text, setText] = useState('Not a Member');
 

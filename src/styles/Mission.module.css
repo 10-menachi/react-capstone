@@ -9,8 +9,9 @@ table {
 
 th,
 td {
-  padding: 10px;
-  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+  padding: 5px;
 }
 
 th {
@@ -58,20 +59,46 @@ button:hover {
   padding: 5px;
 }
 
-.profileTable {
+/* Mission.module.css */
+.missionTable {
+  width: 100%;
   border-collapse: collapse;
-  width: 400px;
+  margin-bottom: 20px;
+}
+
+.missionTable th {
+  background-color: #f5f5f5;
+  padding: 10px;
+  text-align: left;
+}
+
+.missionTable td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.missionRow {
+  background-color: #fff;
+}
+
+.container h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.container li {
+  margin-bottom: 5px;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  text-align: left;
   padding: 5px;
-  margin: 20px;
-}
-
-.profileTable th {
-  font-size: 25px;
-}
-
-.profileRow {
-  display: block;
-  padding: 25px;
-  border: 0.1px solid rgb(207, 191, 191);
-  font-size: 16px;
 }

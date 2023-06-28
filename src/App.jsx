@@ -7,6 +7,7 @@ import MyProfile from './components/MyProfile';
 import Navbar from './components/Navbar';
 import Rockets from './components/Rockets';
 import { fetchMissions } from './redux/missions/missionsSlice';
+
 const Layout = () => (
   <div>
     <Navbar />
