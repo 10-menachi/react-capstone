@@ -26,7 +26,7 @@ const MissionDetails = ({ name, description, id, reserved }) => {
     }
   };
 
-  const myStatusStyle = {
+  const status = {
     backgroundColor: reserved ? '#379cf6' : '#36454F',
     display: 'block',
     width: '120px',
@@ -35,32 +35,28 @@ const MissionDetails = ({ name, description, id, reserved }) => {
     alignSelf: 'center',
   };
 
-  const rowStyle = {
+  const row = {
     backgroundColor: reserved ? 'white' : '#E5E4E2',
   };
 
   return (
     <tbody>
-      <tr style={rowStyle}>
+      <tr style={row}>
         <td className={styles.name}>{name}</td>
         <td className={styles.description}>{description}</td>
         <td>
-          <span style={myStatusStyle}>{text}</span>
+          <span style={status}>{text}</span>
         </td>
         <td>
           {!reserved && (
-            <button
-              type="button"
-              className={styles.joinBtn}
-              onClick={handleJoin}
-            >
+            <button type="button" className={styles.join} onClick={handleJoin}>
               Join Mission
             </button>
           )}
           {reserved && (
             <button
               type="button"
-              className={styles.leaveBtn}
+              className={styles.leave}
               onClick={handleLeave}
             >
               Leave Mission

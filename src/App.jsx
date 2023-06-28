@@ -19,7 +19,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchMissions());
-    dispatch(fetchRockets());
   }, [dispatch]);
 
   return (
