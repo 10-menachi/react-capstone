@@ -198,7 +198,9 @@ Obi Anthony
 
 - GitHub: [Obi Anthony](https://github.com/Megagig)
 - Twitter: [Obi Anthony](https://twitter.com/Megagigsolution)
-  Christian Wamalwa
+
+Christian Wamalwa
+
 - GitHub: [Christian Wamalwa](https://github.com/10-menachi)
 - Twitter: [Christian Wamalwa](https://twitter.com/10-menachi)
 
