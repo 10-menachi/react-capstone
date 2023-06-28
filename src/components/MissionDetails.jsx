@@ -1,26 +1,19 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { setMissionFree, setMissionReserved } from '../redux/missions/missionsSlice';
 import styles from '../styles/Mission.module.css';
 
 const MissionDetails = ({
-  name, description, reserved,
+  name, description, reserved, id,
 }) => {
-  const [text, setText] = useState('Not a Member');
+  const dispatch = useDispatch();
 
   const handleJoin = () => {
-    console.log('Joined');
-
-    if (!reserved) {
-      setText('Active Member');
-    }
+    dispatch(setMissionReserved(id));
   };
 
   const handleLeave = () => {
-    console.log('Left');
-
-    if (reserved) {
-      setText('Not a member');
-    }
+    dispatch(setMissionFree(id));
   };
 
   const status = {
@@ -41,7 +34,7 @@ const MissionDetails = ({
       <td className={styles.name}>{name}</td>
       <td className={styles.description}>{description}</td>
       <td>
-        <span style={status}>{text}</span>
+        <span style={status}>{reserved ? 'Active Member' : 'Not a Member'}</span>
       </td>
       <td>
         {!reserved && (
@@ -67,6 +60,7 @@ MissionDetails.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   reserved: PropTypes.bool,
+  id: PropTypes.string.isRequired,
 };
 
 MissionDetails.defaultProps = {
