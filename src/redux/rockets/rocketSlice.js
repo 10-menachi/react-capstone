@@ -7,7 +7,10 @@ export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async () =>
     const response = await fetch(baseUrl);
     const rockets = await response.json();
     const updatedRockets = rockets.map((rocket) => ({
-      ...rocket,
+      id: rocket.id,
+      name: rocket.rocket_name,
+      description: rocket.description,
+      image: rocket.flickr_images[0],
       reserved: false,
     }));
     return updatedRockets;

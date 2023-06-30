@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { cancelReservation, reserveRocket } from '../redux/rockets/rocketSlice';
 
 const Rocket = ({
-  rocketId, rocketImages, rocketName, rocketDescription, reserved,
+  rocketId, rocketImage, rocketName, rocketDescription, reserved,
 }) => {
   const dispatch = useDispatch();
 
@@ -14,7 +14,7 @@ const Rocket = ({
 
   return (
     <div className="rocket" data-testid="rocket">
-      <img src={rocketImages[0]} alt="" />
+      <img src={rocketImage} alt="" />
       <div className="details">
         <h2>{rocketName}</h2>
         <p>
@@ -46,8 +46,8 @@ const Rocket = ({
 };
 
 Rocket.propTypes = {
-  rocketId: PropTypes.string.isRequired,
-  rocketImages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  rocketId: PropTypes.number.isRequired,
+  rocketImage: PropTypes.string.isRequired,
   rocketName: PropTypes.string.isRequired,
   rocketDescription: PropTypes.string.isRequired,
   reserved: PropTypes.bool.isRequired,

@@ -10,8 +10,8 @@ const mockStore = configureStore([]);
 
 describe('Rocket component', () => {
   let store;
-  const rocketId = '1';
-  const rocketImages = ['rocket1.png', 'rocket2.png'];
+  const rocketId = 1;
+  const rocketImage = 'rocket1.png';
   const rocketName = 'Falcon 9';
   const rocketDescription = 'This is a rocket description';
   const reserved = false;
@@ -25,7 +25,7 @@ describe('Rocket component', () => {
       <Provider store={store}>
         <Rocket
           rocketId={rocketId}
-          rocketImages={rocketImages}
+          rocketImage={rocketImage}
           rocketName={rocketName}
           rocketDescription={rocketDescription}
           reserved={reserved}
@@ -42,7 +42,7 @@ describe('Rocket component', () => {
     expect(reserveButton).toBeInTheDocument();
     expect(reserveButton).toHaveClass('reserve-button');
     expect(reserveButton).not.toHaveClass('cancel');
-    expect(screen.getByAltText('')).toBeInTheDocument();
+    expect(screen.queryAllByText('')).not.toEqual([]);
 
     expect(screen.queryByText('Cancel Reservation')).toBeNull();
   });
@@ -52,7 +52,7 @@ describe('Rocket component', () => {
       <Provider store={store}>
         <Rocket
           rocketId={rocketId}
-          rocketImages={rocketImages}
+          rocketImage={rocketImage}
           rocketName={rocketName}
           rocketDescription={rocketDescription}
           reserved
@@ -73,7 +73,7 @@ describe('Rocket component', () => {
       <Provider store={store}>
         <Rocket
           rocketId={rocketId}
-          rocketImages={rocketImages}
+          rocketImage={rocketImage}
           rocketName={rocketName}
           rocketDescription={rocketDescription}
           reserved
@@ -95,7 +95,7 @@ describe('Rocket component', () => {
       <Provider store={store}>
         <Rocket
           rocketId={rocketId}
-          rocketImages={rocketImages}
+          rocketImage={rocketImage}
           rocketName={rocketName}
           rocketDescription={rocketDescription}
           reserved={reserved}

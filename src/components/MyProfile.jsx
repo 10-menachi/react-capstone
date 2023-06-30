@@ -32,10 +32,10 @@ const MyProfile = ({ rockets }) => {
         ) : (
           bookedRockets.map((rocket) => (
             <div
-              key={rocket.rocket_id}
+              key={rocket.id}
               className="rocket-prof"
             >
-              <p>{rocket.rocket_name}</p>
+              <p>{rocket.name}</p>
             </div>
           ))
         )}
@@ -47,9 +47,9 @@ const MyProfile = ({ rockets }) => {
 MyProfile.propTypes = {
   rockets: PropTypes.arrayOf(
     PropTypes.shape({
-      rocket_id: PropTypes.string.isRequired,
-      flickr_images: PropTypes.arrayOf(PropTypes.string).isRequired,
-      rocket_name: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       reserved: PropTypes.bool.isRequired,
     }),
