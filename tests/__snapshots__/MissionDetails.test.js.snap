@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for MissionDetails component renders correctly 1`] = `
+<table>
+  <tbody>
+    <tr
+      style={
+        {
+          "backgroundColor": "#E5E4E2",
+        }
+      }
+    >
+      <td
+        className="name"
+      >
+        Mission name
+      </td>
+      <td
+        className="description"
+      >
+        Mission description
+      </td>
+      <td>
+        <span
+          style={
+            {
+              "alignSelf": "center",
+              "backgroundColor": "#36454F",
+              "border": "1px solid gray",
+              "color": "white",
+              "display": "block",
+              "width": "120px",
+            }
+          }
+        >
+          Not a Member
+        </span>
+      </td>
+      <td>
+        <button
+          className="join"
+          onClick={[Function]}
+          type="button"
+        >
+          Join Mission
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
