@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setMissionFree, setMissionReserved } from '../redux/missions/missionsSlice';
 import styles from '../styles/Mission.module.css';
@@ -38,9 +39,7 @@ const MissionDetails = ({
       </td>
       <td>
         {!reserved && (
-          <button type="button" className={styles.join} onClick={handleJoin}>
-            Join Mission
-          </button>
+          <button type="button" className={styles.join} onClick={handleJoin}>Join Mission</button>
         )}
         {reserved && (
           <button
@@ -49,6 +48,7 @@ const MissionDetails = ({
             onClick={handleLeave}
           >
             Leave Mission
+
           </button>
         )}
       </td>

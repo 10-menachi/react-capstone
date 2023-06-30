@@ -13,7 +13,7 @@ const Rocket = ({
   };
 
   return (
-    <div className="rocket">
+    <div className="rocket" data-testid="rocket">
       <img src={rocketImages[0]} alt="" />
       <div className="details">
         <h2>{rocketName}</h2>
@@ -46,7 +46,7 @@ const Rocket = ({
 };
 
 Rocket.propTypes = {
-  rocketId: PropTypes.number.isRequired,
+  rocketId: PropTypes.string.isRequired,
   rocketImages: PropTypes.arrayOf(PropTypes.string).isRequired,
   rocketName: PropTypes.string.isRequired,
   rocketDescription: PropTypes.string.isRequired,

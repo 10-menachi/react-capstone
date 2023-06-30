@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import missionStyles from '../styles/Mission.module.css';
 import profileStyles from '../styles/myProfile.module.css';
