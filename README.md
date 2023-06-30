@@ -1,9 +1,5 @@
 <a name="readme-top"></a>
 
-<!-- <div align="center">
-    <img src="Images\space-img.png" alt="logo"  height="300" />
-  <br/> -->
-
 <h3><b>Space Traveler's Hub </b></h3>
 </div>
 
