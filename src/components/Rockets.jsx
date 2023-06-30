@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import Rocket from './Rocket';
 
 const Rockets = ({ rockets }) => (
@@ -19,7 +20,7 @@ const Rockets = ({ rockets }) => (
 Rockets.propTypes = {
   rockets: PropTypes.arrayOf(PropTypes.shape(
     {
-      rocket_id: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
       flickr_images: PropTypes.arrayOf(PropTypes.string).isRequired,
       rocket_name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,

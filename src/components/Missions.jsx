@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import Styles from '../styles/Mission.module.css';
 import MissionDetails from './MissionDetails';
 
