@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Outlet, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Missions from './components/Missions';
+import MyProfile from './components/MyProfile';
+import Navbar from './components/Navbar';
+import Rockets from './components/Rockets';
+import { fetchMissions } from './redux/missions/missionsSlice';
+import { fetchRockets } from './redux/rockets/rocketSlice';
 
-function App() {
-  const [count, setCount] = useState(0)
+const Layout = () => (
+  <div>
+    <Navbar />
+    <Outlet />
+  </div>
+);
+
+const App = () => {
+  const dispatch = useDispatch();
+  const rockets = useSelector((state) => state.rockets.rockets);
+  const missions = useSelector((state) => state.missions.missions);
+
+  useEffect(() => {
+    dispatch(fetchMissions());
+    dispatch(fetchRockets());
+  }, [dispatch]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Rockets rockets={rockets} />} />
+          <Route path="missions" element={<Missions missions={missions} />} />
+          <Route path="myprofile" element={<MyProfile rockets={rockets} />} />
+        </Route>
+      </Routes>
+    </div>
+  );
+};
 
-export default App
+export default App;
