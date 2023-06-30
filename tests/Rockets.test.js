@@ -8,16 +8,16 @@ import rocketsReducer from '../src/redux/rockets/rocketSlice';
 
 const mockRockets = [
   {
-    id: '1',
-    flickr_images: ['image1.jpg', 'image2.jpg'],
-    rocket_name: 'Rocket 1',
+    id: 1,
+    image: 'image1.jpg',
+    name: 'Rocket 1',
     description: 'Rocket 1 description',
     reserved: false,
   },
   {
-    id: '2',
-    flickr_images: ['image3.jpg', 'image4.jpg'],
-    rocket_name: 'Rocket 2',
+    id: 2,
+    image: 'image3.jpg',
+    name: 'Rocket 2',
     description: 'Rocket 2 description',
     reserved: true,
   },
@@ -42,7 +42,7 @@ describe('Rockets component', () => {
 
     mockRockets.forEach((rocket, index) => {
       const rocketElement = rocketElements[index];
-      const rocketNameElement = screen.getByText(rocket.rocket_name);
+      const rocketNameElement = screen.getByText(rocket.name);
       const rocketDescriptionElement = screen.getByText(rocket.description);
 
       expect(rocketElement).toBeInTheDocument();

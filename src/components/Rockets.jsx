@@ -8,8 +8,8 @@ const Rockets = ({ rockets }) => (
       <Rocket
         key={rocket.id}
         rocketId={rocket.id}
-        rocketImages={rocket.flickr_images}
-        rocketName={rocket.rocket_name}
+        rocketImage={rocket.image}
+        rocketName={rocket.name}
         rocketDescription={rocket.description}
         reserved={rocket.reserved}
       />
@@ -20,11 +20,11 @@ const Rockets = ({ rockets }) => (
 Rockets.propTypes = {
   rockets: PropTypes.arrayOf(PropTypes.shape(
     {
-      id: PropTypes.string.isRequired,
-      flickr_images: PropTypes.arrayOf(PropTypes.string).isRequired,
-      rocket_name: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       reserved: PropTypes.bool.isRequired,
+      image: PropTypes.string.isRequired,
     },
   )).isRequired,
 };

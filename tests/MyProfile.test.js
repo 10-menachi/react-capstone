@@ -12,16 +12,16 @@ const mockedUseSelector = useSelector;
 
 const rockets = [
   {
-    rocket_id: '1',
-    flickr_images: ['image1.jpg', 'image2.jpg'],
-    rocket_name: 'Rocket 1',
+    id: 1,
+    image: 'image1.jpg',
+    name: 'Rocket 1',
     description: 'Rocket 1 description',
     reserved: true,
   },
   {
-    rocket_id: '2',
-    flickr_images: ['image3.jpg', 'image4.jpg'],
-    rocket_name: 'Rocket 2',
+    id: 2,
+    image: 'image3.jpg',
+    name: 'Rocket 2',
     description: 'Rocket 2 description',
     reserved: true,
   },
@@ -58,8 +58,8 @@ describe('MyProfile component', () => {
     render(<MyProfile rockets={rockets} />);
 
     rockets.forEach((rocket) => {
-      const rocketElement = screen.getByText(new RegExp(rocket.rocket_name));
-      expect(rocketElement).toBeInTheDocument();
+      const rocketElement = screen.queryAllByText(new RegExp(rocket.name));
+      expect(rocketElement[0]).toBeInTheDocument();
     });
   });
 
